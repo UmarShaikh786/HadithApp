@@ -1,38 +1,108 @@
+/* Base styles */
 .App {
   text-align: center;
+  margin: 0;
+  padding: 0;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.container {
+  margin-bottom: 20px;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.container-2 {
+  border: 3px solid black;
+  padding: 20px;
+  margin-top: 20px;
+  width: 500px;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: left;
+  background-color: lightgray; /* fixed typo for background-color */
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.btntranslatediv {
   display: flex;
-  flex-direction: column;
-  align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
+  align-items: center;
+  margin-top: 13px;
+}
+
+.btntranslate {
+  padding: 2px 2px;
+  margin-top: 5px;
+  background-color: blueviolet;
   color: white;
 }
 
-.App-link {
-  color: #61dafb;
+.btntranslate:hover {
+  background-color: darkcyan;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+button {
+  padding: 10px 20px;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+.copydiv {
+  display: flex;
+  justify-content: space-between;
+  margin-top: -10px;
+  padding-bottom: 4px;
+}
+
+/* Media query for mobile devices */
+@media (max-width: 768px) {
+  .copydiv {
+    flex-direction: column; /* Stack items vertically */
+    justify-content: center; /* Center items */
+    align-items: center; /* Center items horizontally */
+    margin-top: 0; /* Adjust margin to prevent overlap */
+    padding-bottom: 10px; /* Increase padding for better touch spacing */
   }
-  to {
-    transform: rotate(360deg);
+}
+
+/* Media query for very small mobile devices */
+@media (max-width: 480px) {
+  .copydiv {
+    padding-bottom: 12px; /* Further increase padding */
+  }
+}
+
+
+.btncopy {
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: lightpink;
+}
+
+p {
+  margin: 0;
+  padding: 5px 0;
+}
+
+/* Responsive adjustments for mobile */
+@media only screen and (max-width: 600px) {
+  .container-2 {
+    width: 90%; /* Make the container take most of the width */
+    padding: 10px; /* Reduce padding for smaller screens */
+    margin-top: 10px; /* Adjust margin for spacing */
+  }
+
+  .btntranslate {
+    padding: 5px 10px; /* Increase button padding for better tap target */
+    font-size: 14px; /* Adjust font size for buttons */
+  }
+
+  button {
+    padding: 8px 16px; /* Adjust general button padding */
+    font-size: 14px; /* Decrease button font size */
+  }
+
+  .copydiv {
+    justify-content: center; /* Center elements for better alignment on small screens */
+    margin-top: 5px; /* Adjust margin for better spacing */
   }
 }
