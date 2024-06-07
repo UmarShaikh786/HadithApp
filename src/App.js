@@ -4,9 +4,11 @@ import { useState } from 'react';
 import translate from 'translate'
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
-
+// import 'dotenv/config'
 function App() {
-  axios.defaults.baseURL = "http://localhost:5000/hadith";
+  // require('dotenv').config()
+ 
+  axios.defaults.baseURL = process.env.REACT_APP_API_URL;
   const [hadithData, setHadithData] = useState([]);
   const [filteredData, setFilteredData] = useState(null);
   const [bgcolor] = useState(["lightyellow","lightsalmon","lightpink", "lightcoral", "lightblue","lightcyan","lightgray","lightorange","lightgreen","lightskyblue"]);
