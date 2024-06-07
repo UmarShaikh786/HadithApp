@@ -8,7 +8,7 @@ import 'react-toastify/dist/ReactToastify.css';
 function App() {
   // require('dotenv').config()
  
-  axios.defaults.baseURL = process.env.REACT_APP_API_URL;
+  // axios.defaults.baseURL = process.env.REACT_APP_API_URL;
   const [hadithData, setHadithData] = useState([]);
   const [filteredData, setFilteredData] = useState(null);
   const [bgcolor] = useState(["lightyellow","lightsalmon","lightpink", "lightcoral", "lightblue","lightcyan","lightgray","lightorange","lightgreen","lightskyblue"]);
@@ -18,7 +18,7 @@ function App() {
   
 
   const handleClick = async () => {
-    const result = await axios.get("/");
+    const result = await axios.get("https://hadith-backend.vercel.app/hadith/");
     if (result.data.message === 'success') {
       setHadithData(result.data.hadith);
       const randomIndex = Math.floor(Math.random() * result.data.hadith.length);
