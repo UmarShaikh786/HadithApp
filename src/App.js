@@ -18,7 +18,7 @@ function App() {
   
 
   const handleClick = async () => {
-    const result = await axios.get("https://hadith-backend.vercel.app/hadith/");
+    const result = await axios.get("https://hadith-backend.vercel.app/hadith");
     if (result.data.message === 'success') {
       setHadithData(result.data.hadith);
       const randomIndex = Math.floor(Math.random() * result.data.hadith.length);
